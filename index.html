@@ -201,34 +201,38 @@
         <button id="submit-btn">Let's Eat!</button>
     </form>
 
-    <script>
-        document.getElementById('submit-btn').addEventListener('click', function(event) {
-            event.preventDefault();
-            const nameInput = document.getElementById('love-name').value.trim();
-            if (nameInput.toLowerCase() === "shreya") {
-                alert("Welcome to the Cake Party! 🎂");
-                window.location.href = "main.html";
-            } else {
-                alert("Oops! Wrong ingredient! 🎂");
-            }
-        });
+  <script>
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-        function createSprinkle() {
-            const sprinkle = document.createElement("div");
-            sprinkle.classList.add("sprinkle");
-            sprinkle.style.left = Math.random() * 100 + "vw";
-            sprinkle.style.background = `hsl(${Math.random() * 360}, 80%, 65%)`;
-            sprinkle.style.animationDuration = Math.random() * 2 + 3 + "s";
-            document.body.appendChild(sprinkle);
+    const nameInput = document.getElementById('love-name').value.trim().toLowerCase();
 
-            setTimeout(() => {
-                sprinkle.remove();
-            }, 5000);
-        }
+    if (nameInput === "shreya") {
+        alert("Welcome to the Cake Party! 🎂");
+        window.location.href = "main.html";
+    } else {
+        alert("Oops! Wrong ingredient! 🎂");
+    }
+});
 
-        setInterval(createSprinkle, 250);
-    </script>
+function createSprinkle() {
+    const sprinkle = document.createElement("div");
+    sprinkle.classList.add("sprinkle");
+    sprinkle.style.left = Math.random() * 100 + "vw";
+    sprinkle.style.background = `hsl(${Math.random() * 360}, 80%, 65%)`;
+    sprinkle.style.animationDuration = Math.random() * 2 + 3 + "s";
+    document.body.appendChild(sprinkle);
+
+    setTimeout(() => {
+        sprinkle.remove();
+    }, 5000);
+}
+
+setInterval(createSprinkle, 250);
+</script>
+
 
 </body>
 
 </html>
+
